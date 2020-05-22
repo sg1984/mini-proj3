@@ -1,0 +1,4 @@
+[
+    {"volunteerId":1,"name":"John Doe","email":"john@email.com","moreInfo":"Very helpful and fun person","isActive":true},
+    {"volunteerId":2,"name":"Mary Poppins","email":"mary@email.com","moreInfo":"A magical person","isActive":true}
+]

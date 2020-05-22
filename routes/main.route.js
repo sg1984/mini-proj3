@@ -3,6 +3,8 @@ const controllerSpeaker = require('../controllers/speaker.controller.js');
 const controllerSponsor = require('../controllers/sponsor.controller.js');
 const controllerConference = require('../controllers/conference.controller.js');
 const controllerMail = require('../controllers/mail.controller.js');
+const controllerComitee = require('../controllers/comitee.controller.js');
+const controllerVolunteer = require('../controllers/volunteer.controller.js');
 const jsonMessagesPath = __dirname + "/../assets/jsonMessages/";
 const jsonMessages = require(jsonMessagesPath + "login");
 router.get('/', function(req, res) {
@@ -40,6 +42,22 @@ router.post('/conferences/:idconf/speakers/:idspeaker', isLoggedIn, controllerCo
 router.delete('/conferences/:idconf/speakers/:idspeaker', controllerConference.deleteSpeaker);
 
 router.post('/contacts/emails', controllerMail.send);
+
+// comitee endpoints
+router.get('/comitee/', controllerComitee.read);
+router.get('/comitee/:id', controllerComitee.readID);
+router.post('/comitee/', isLoggedIn, controllerComitee.save);
+router.put('/comitee/:id', isLoggedIn, controllerComitee.update);
+router.put('/comitee/del/:id', isLoggedIn, controllerComitee.deleteL);
+router.delete('/comitee/:id', isLoggedIn, controllerComitee.deleteF);
+
+// volunteers endpoints
+router.get('/volunteers/', controllerVolunteer.read);
+router.get('/volunteers/:id', controllerVolunteer.readID);
+router.post('/volunteers/', isLoggedIn, controllerVolunteer.save);
+router.put('/volunteers/:id', isLoggedIn, controllerVolunteer.update);
+router.put('/volunteers/del/:id', isLoggedIn, controllerVolunteer.deleteL);
+router.delete('/volunteers/:id', isLoggedIn, controllerVolunteer.deleteF);
 
 module.exports = router;
 

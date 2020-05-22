@@ -1,0 +1,4 @@
+[
+    {"comiteeId":1,"name":"Web Development","moreInfo":"Lorem ipson","isActive":true},
+    {"comiteeId":2,"name":"API Development","moreInfo":"More Lorem ipson","isActive":true}
+]
